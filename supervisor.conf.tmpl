@@ -1,0 +1,31 @@
+[supervisord]
+nodaemon=true
+logfile=/vol/logs/{{HOSTNAME}}-supervisord.log
+
+[unix_http_server]
+file=/var/run/supervisor.sock
+chmod=0700
+
+[rpcinterface:supervisor]
+supervisor.rpcinterface_factory = supervisor.rpcinterface:make_main_rpcinterface
+
+[supervisorctl]
+serverurl=unix:///var/run/supervisor.sock
+
+[program:program]
+command=/run-program.sh
+autorestart=true
+stdout_events_enabled=true
+stderr_events_enabled=true
+stdout_logfile=/vol/logs/{{HOSTNAME}}-program.log
+stderr_logfile=/vol/logs/{{HOSTNAME}}-program.log
+umask=002
+priority=1
+
+{%- if VAR_WATCH %}
+[program:watcher]
+command=/run-watcher.sh
+autorestart=true
+priority=2
+{%- endif -%}
+
