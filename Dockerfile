@@ -1,4 +1,4 @@
-FROM docker-registry.turbulent.ca:5000/heap-app:4.0.0
+FROM turbulent/heap-app:4.0.0
 MAINTAINER Philippe Milot <b@turbulent.ca>
 
 ENV heap-daemon 1.0.0
