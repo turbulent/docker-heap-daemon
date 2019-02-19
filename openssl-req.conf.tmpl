@@ -1,0 +1,12 @@
+[ req ]
+default_bits           = 2048
+distinguished_name     = req_distinguished_name
+prompt                 = no
+[ req_distinguished_name ]
+C                      = US
+ST                     = NY
+L                      = Test World
+O                      = Develop
+OU                     = Development Unit
+CN                     = {{VAR_SSL_SERVER_NAME}}
+emailAddress           = dev@example.com
