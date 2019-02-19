@@ -1,4 +1,4 @@
-# heap-ratchet docker image.
+# heap-daemon docker image.
 
 Image for running a long-lived PHP process, usually using evented I/O via
 [ReactPHP](http://reactphp.org/).
