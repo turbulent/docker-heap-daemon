@@ -22,6 +22,8 @@ RUN ln -sf /etc/php/7.1/mods-available/event.ini /etc/php/7.1/cli/conf.d/21-even
 
 COPY run.sh /
 
+RUN echo "524288" > /proc/sys/fs/inotify/max_user_watches
+
 ENV VAR_COMMAND="unset-program.php" \
   VAR_WATCH="" \
   VAR_SSL="1" \
