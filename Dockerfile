@@ -1,5 +1,5 @@
-FROM turbulent/heap-app:4.0.0
-ENV heap-daemon 1.0.0
+FROM turbulent/heap-app:5.0.1
+ENV heap-daemon 2.1.1
 
 ENV DEBIAN_FRONTEND noninteractive
 RUN apt-get update && \
@@ -21,8 +21,6 @@ ADD event.ini /etc/php/7.1/mods-available/
 RUN ln -sf /etc/php/7.1/mods-available/event.ini /etc/php/7.1/cli/conf.d/21-event.ini
 
 COPY run.sh /
-
-RUN echo "524288" > /proc/sys/fs/inotify/max_user_watches
 
 ENV VAR_COMMAND="unset-program.php" \
   VAR_WATCH="" \
