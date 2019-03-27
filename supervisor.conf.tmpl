@@ -35,3 +35,9 @@ command=/run-nginx.sh
 autorestart=true
 priority=3
 {%- endif -%}
+
+[program:nullmailer]
+command=/run-nullmailer.sh
+stdout_logfile=/vol/logs/{{HOSTNAME}}-nullmailer.log
+stderr_logfile=/vol/logs/{{HOSTNAME}}-nullmailer.log
+priority=3
