@@ -20,6 +20,7 @@ ADD run-nginx.sh /
 ADD event.ini /etc/php/7.2/mods-available/
 RUN ln -sf /etc/php/7.2/mods-available/event.ini /etc/php/7.2/cli/conf.d/21-event.ini
 
+ADD limits.conf /etc/security/limits.conf
 COPY run.sh /
 
 ENV VAR_COMMAND="unset-program.php" \

@@ -17,4 +17,4 @@ build-and-push:
   only:
     - tags
   tags:
-    - node-lts-v6
+    - image-builder-01
