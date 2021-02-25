@@ -21,7 +21,7 @@ $ docker run -d -e "VAR_COMMAND=/vol/website/bin/daemon.php" heap-daemon
 
 This image uses environment variables to override common configuration options.
 
-At the very least, you should specify `VAR_PROGRAM` as the path to the PHP
+At the very least, you should specify `VAR_COMMAND` as the path to the PHP
 daemon program.
 
 If you set `VAR_WATCH` to a valid directory within the container, the PHP
