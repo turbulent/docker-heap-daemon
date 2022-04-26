@@ -1,5 +1,5 @@
-FROM turbulent/heap-app:5.3.8
-ENV heap-daemon 2.1.9
+FROM turbulent/heap-app:6.0.3
+ENV heap-daemon 2.1.10
 
 ENV DEBIAN_FRONTEND noninteractive
 RUN apt-get update && \
