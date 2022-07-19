@@ -1,9 +1,9 @@
-FROM turbulent/heap-app:6.0.3
-ENV heap-daemon 2.1.10
+FROM turbulent/heap-app:6.1.0
+ENV heap-daemon 2.2.0
 
 ENV DEBIAN_FRONTEND noninteractive
 RUN apt-get update && \
-  apt-get -y install pkg-config php7.2-dev libevent-dev && \
+  apt-get -y install pkg-config php7.4-dev libevent-dev && \
   pecl install event && \
   apt-get clean && rm -rf /var/lib/apt/lists/*
 
@@ -17,8 +17,8 @@ ADD run-program.sh /
 ADD run-watcher.sh /
 ADD run-nginx.sh /
 
-ADD event.ini /etc/php/7.2/mods-available/
-RUN ln -sf /etc/php/7.2/mods-available/event.ini /etc/php/7.2/cli/conf.d/21-event.ini
+ADD event.ini /etc/php/7.4/mods-available/
+RUN ln -sf /etc/php/7.4/mods-available/event.ini /etc/php/7.4/cli/conf.d/21-event.ini
 
 ADD limits.conf /etc/security/limits.conf
 COPY run.sh /
